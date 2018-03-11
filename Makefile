@@ -6,7 +6,7 @@
 #    By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/02/13 16:02:56 by brobicho     #+#   ##    ##    #+#        #
-#    Updated: 2018/02/13 18:02:18 by brobicho    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/03/01 15:36:49 by brobicho    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -31,6 +31,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME) $(OBJ)
+	@make fclean -C include/libft/
 
 re: fclean all
 

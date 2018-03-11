@@ -6,7 +6,7 @@
 /*   By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/13 15:47:42 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 17:52:15 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/03/01 16:47:14 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -46,7 +46,7 @@ void	get_params(int ac, char **av, t_arg *param, int *argc)
 		{
 			*argc = *argc + 1;
 			j = 0;
-			while (av[i][j] != '\0')
+			while (av[i][j])
 			{
 				if (av[i][j] == 'l')
 					param->l = 1;
