@@ -4,8 +4,8 @@
 
 ## Presentation
 
-Projet consistant à recoder la fonction système ls, a la norme 42.
-Realise au cours de mon cursus au 101.
+Projet consistant à recoder la fonction système ls, à la norme 42.
+Réalisé au cours de mon cursus au 101.
 
 -----------
 
