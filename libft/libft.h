@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   libft.h                                          .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/04 03:20:11 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 17:57:54 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/03 18:27:23 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,10 +27,16 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+t_list			*ft_lstat(t_list *lst, size_t index);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
+char			*ft_strjoin_sep(char const *s1,
+					char const *sep, char const *s2);
+void			ft_lstsort(t_list **lst, int (*f)
+					(void *, size_t, void *, size_t));
+void			ft_lstins(t_list **lst, t_list *new, size_t index);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_strclr(char *s);
@@ -83,9 +89,6 @@ void			ft_putstr_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_lstadd(t_list **alst, t_list *new);
-void			ft_putstrsp(char *str);
-void			ft_putnbrl(int nb);
-void			ft_putstrnbr(char *str, int nb);
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putstrnbr.c                                   .::    .:/ .      .::   */
+/*   ft_lstat.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/02/13 17:59:58 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/13 18:01:21 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/10 03:50:03 by brobicho     #+#   ##    ##    #+#       */
+/*   Updated: 2018/07/25 15:52:54 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstrnbr(char *str, int nb)
+t_list	*ft_lstat(t_list *lst, size_t index)
 {
-	ft_putstr(str);
-	ft_putchar(' ');
-	ft_putnbr(nb);
+	while (lst && index--)
+		lst = lst->next;
+	return (lst);
 }

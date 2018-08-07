@@ -3,100 +3,70 @@
 /*                                                              /             */
 /*   main.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/02/13 15:47:42 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/03/01 16:47:14 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/10 11:18:44 by brobicho     #+#   ##    ##    #+#       */
+/*   Updated: 2018/08/07 16:49:14 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "include/ft_ls.h"
+#include "ft_ls.h"
 
-void	init_params(t_arg *param)
-{
-	param->l = 0;
-	param->R = 0;
-	param->d = 0;
-	param->r = 0;
-	param->t = 0;
-}
-
-void	check_arg(char c, t_arg *param)
-{
-	if (c == 'd')
-		param->d = 1;
-	if (c == 'r')
-		param->r = 1;
-	if (c == 't')
-		param->t = 1;
-}
-
-void	get_params(int ac, char **av, t_arg *param, int *argc)
+static int		parse_opt(char *str, t_opts *flag)
 {
 	int	i;
-	int	j;
 
-	*argc = 0;
-	init_params(param);
 	i = 0;
-	while (i != ac)
+	while (str[++i])
 	{
-		if (av[i][0] == '-')
-		{
-			*argc = *argc + 1;
-			j = 0;
-			while (av[i][j])
-			{
-				if (av[i][j] == 'l')
-					param->l = 1;
-				if (av[i][j] == 'R')
-					param->R = 1;
-				check_arg(av[i][j], param);
-				j = j + 1;
-			}
-		}
-		i = i + 1;
+		if (str[i] == 'l')
+			flag->opt_l = 1;
+		else if (str[i] == 'G')
+			flag->opt_g = 1;
+		else if (str[i] == 'R')
+			flag->opt_rec = 1;
+		else if (str[i] == 'a')
+			flag->opt_a = 1;
+		else if (str[i] == 'r')
+			flag->opt_r = 1;
+		else if (str[i] == 't')
+			flag->opt_t = 1;
+		else if (str[i] == '1')
+			flag->opt_1 = 1;
+		else if (str[i] == 'p')
+			flag->opt_p = 1;
+		else
+			return (error_flag(str, i));
 	}
+	return (1);
 }
 
-void	simple_ls(int ac, char **av, t_arg param)
-{
-	int	i;
-
-	i = 1;
-	while (av[i] != 0 && av[i][0] == '-')
-		i = i + 1;
-	if (ac == 1)
-		i = 1;
-	if (av[i] != 0 && av[i][0] != '-')
-		ft_ls(av[i], param);
-	else
-		ft_ls(".", param);
-}
-
-int		main(int ac, char **av)
+int				main(int ac, char **av)
 {
 	int		i;
-	int		argc;
-	t_arg		param;
+	t_opts	flag;
+	t_list	*save;
+	int		error;
 
 	i = 1;
-	get_params(ac, av, &param, &argc);
-	if (ac - argc <= 2)
-		simple_ls(ac, av, param);
-	else if (ac - argc > 2)
+	error = 0;
+	flag = init_flag();
+	if (ft_padinit())
+		return (1);
+	save = NULL;
+	while (i < ac && (av[i][0] == '-' && av[i][1]))
 	{
-		while (i != ac)
-		{
-			if (av[i][0] != '-')
-			{
-				ft_putendl(av[i]);
-				ft_ls(av[i], param);
-				ft_putchar('\n');
-			}
-			i = i + 1;
-		}
+		if (!parse_opt(av[i++], &flag))
+			return (1);
 	}
+	while (i < ac)
+	{
+		if (!ft_new_entry(av[i++], NULL, &save))
+			error++;
+	}
+	if (!save && !error)
+		ft_new_entry(".", NULL, &save);
+	ft_ls(&flag, save, ac);
 	return (0);
 }

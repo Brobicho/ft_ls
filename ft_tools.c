@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstadd.c                                      .::    .:/ .      .::   */
+/*   ft_tools.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: brobicho <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/04 03:19:54 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/04 03:19:54 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/04/10 10:01:24 by brobicho     #+#   ##    ##    #+#       */
+/*   Updated: 2018/07/25 15:46:43 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ls.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_nblen(int nb)
 {
-	new->next = *alst;
-	*alst = new;
+	int i;
+
+	i = 1;
+	while (nb / 10)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
+}
+
+void	ft_putsp(int j, int k)
+{
+	while (j < k)
+	{
+		ft_putchar(' ');
+		j++;
+	}
 }
