@@ -6,7 +6,7 @@
 /*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/10/10 17:46:50 by ckupfers     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/07 16:49:06 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/07 20:03:36 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -93,6 +93,7 @@ t_opts			init_flag(void);
 int				ft_pwuid_check(int uid);
 int				ft_padinit(void);
 int				ft_nblen(int nb);
+void			ft_dn_check(int print_dn, const char *path);
 void			ft_putcolor(char *str, char *c);
 void			ft_check_opt_g(t_entry *entry, t_opts *flag);
 void			ft_putsp(int j, int k);

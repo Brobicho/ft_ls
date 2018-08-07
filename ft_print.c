@@ -6,18 +6,12 @@
 /*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/10 17:46:50 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/07 19:38:15 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/07 20:02:53 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-static	void	ft_dn_check(int print_dn, const char *path)
-{
-	if (print_dn)
-		print_path(path);
-}
 
 void	ft_putcolor(char *str, char *c)
 {
