@@ -14,10 +14,10 @@ Réalisé au cours de mon cursus au 101.
 - -G : Affichage en couleur
 - -R : Recherche récursive
 - -a : Affichage des fichiers et dossiers cachés
-- -l : Affichage détaillé
+- -l  : Affichage détaillé
 - -p : Ajout d'un '/' après les dossiers
-- -r : Affichage trié par ordre ASCII montant
-- -t : Affichage trié par date de dernière modification
+- -r  : Affichage trié par ordre ASCII montant
+- -t  : Affichage trié par date de dernière modification
 - -1 : Affichage en liste (par défaut)
 
 -----------
