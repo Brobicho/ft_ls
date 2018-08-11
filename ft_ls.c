@@ -6,7 +6,7 @@
 /*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/04/10 03:36:14 by brobicho     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/07 20:17:52 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/11 14:31:02 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,15 +71,8 @@ void	ft_ls(t_opts *flag, t_list *lst, int ac)
 		entry = lst->content;
 		if (ac > 2)
 			print_dn = 1;
-		if (IS_DIR && !ft_strcmp(entry->p_nf, "."))
-			ft_print_dir_contents(entry->p_nf, flag, 0);
-		else if (IS_DIR && ft_strcmp(entry->p_nf, "."))
-			ft_print_dir_contents(entry->p_nf, flag, print_dn);
-		else
-			ft_check_entry(NULL, flag, entry);
-		if (lst->next
-			&& ((S_ISDIR(prev->info.st_mode) || (S_ISDIR(next->info.st_mode)))))
-			ft_putchar('\n');
+		ft_checkdir(entry, flag, print_dn);
+		ft_newline_ifdir(lst, prev, next);
 		g_pad->blk = 0;
 		lst = lst->next;
 	}

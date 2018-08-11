@@ -6,7 +6,7 @@
 /*   By: brobicho <brobicho@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/10/10 17:46:50 by ckupfers     #+#   ##    ##    #+#       */
-/*   Updated: 2018/08/07 20:03:36 by brobicho    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/08/11 14:31:26 by brobicho    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -94,12 +94,15 @@ int				ft_pwuid_check(int uid);
 int				ft_padinit(void);
 int				ft_nblen(int nb);
 void			ft_dn_check(int print_dn, const char *path);
+void			ft_checkdir(t_entry *entry, t_opts *flag, int print_dn);
+void			ft_newline_ifdir(t_list *lst, t_entry *prev, t_entry *next);
 void			ft_putcolor(char *str, char *c);
 void			ft_check_opt_g(t_entry *entry, t_opts *flag);
 void			ft_putsp(int j, int k);
 void			ft_printcolor(char *str, char *s);
 void			ft_lstfree(t_list *lst);
 void			ft_free_entry(t_entry *entry);
+void			ft_recursive(t_list *tmp, t_opts *flag);
 void			ft_ls(t_opts *flag, t_list *save, int ac);
 void			ft_ls_entries(t_opts *flag, t_list *lst, const char *path);
 void			tri_content(t_list **lst, const t_opts *flag);
