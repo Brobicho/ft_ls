@@ -4,7 +4,8 @@
 
 ## Présentation
 
-Projet consistant à recoder la fonction système ls à l'identique et à la norme 42 > https://cdn.intra.42.fr/pdf/pdf/960/norme.en.pdf
+Projet consistant à recoder la fonction système ls à l'identique
+et à la norme 42 > https://cdn.intra.42.fr/pdf/pdf/960/norme.en.pdf
 Réalisé au cours de mon cursus au 101.
 
 -----------
