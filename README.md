@@ -12,7 +12,7 @@
 
 *Implementation of the Unix `ls` utility in C, following strict coding standards*
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Platform Support](#-platform-support) • [Technical Details](#-technical-details)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Platform Support](#-platform-support)
 
 </div>
 
