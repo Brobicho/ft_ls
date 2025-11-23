@@ -35,7 +35,7 @@ SRC_FILES = ft_strcat.c ft_isprint.c ft_putchar.c ft_putnbr.c ft_putstr.c \
 			ft_lstiter.c ft_lstmap.c ft_lstins.c ft_lstat.c ft_lstsort.c \
 			ft_strjoin_sep.c
 
-HEADER = libft.h
+HEADER = .
 
 all: $(NAME)
 

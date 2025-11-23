@@ -13,6 +13,8 @@
 
 #include "ft_ls.h"
 
+t_pad *g_pad = NULL;
+
 t_opts	init_flag(void)
 {
 	t_opts	flag;

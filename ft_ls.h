@@ -29,6 +29,10 @@
 # include <locale.h>
 # include <langinfo.h>
 # include <stdint.h>
+# include <sys/sysmacros.h>
+
+# define MTIME_S 		info.st_mtim.tv_sec
+# define MTIME_NS		info.st_mtim.tv_nsec
 
 # define LNK_COLOR		RED
 # define DIR_COLOR		GREEN
@@ -88,7 +92,7 @@ typedef struct	s_pad
 	int			maj;
 }				t_pad;
 
-t_pad			*g_pad;
+extern t_pad			*g_pad;
 t_opts			init_flag(void);
 int				ft_pwuid_check(int uid);
 int				ft_padinit(void);
